@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grêmio Estudantil</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg: #0b1220;
+    --card: rgba(255,255,255,0.05);
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --primary: #38bdf8;
+    --radius: 18px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 14px 28px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-sizing: border-box;
+}
+
+.logo { width: 42px; }
+
+.menu {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: var(--muted);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* INSTAGRAM */
+.insta-icon {
+    width: 22px;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+    radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 60%),
+    linear-gradient(rgba(11,18,32,0.85), rgba(11,18,32,0.95)),
+    url("fotos/escola.jpg") center/cover no-repeat;
+}
+
+.hero h1 {
+    font-size: 64px;
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero p {
+    max-width: 600px;
+    opacity: 0.85;
+}
+
+/* ===== SEÇÕES ===== */
+section {
+    padding: 120px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 36px;
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: 0.4s;
+    backdrop-filter: blur(12px);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(56,189,248,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #020617;
+    color: var(--muted);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" class="logo">
+
+    <nav class="menu">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#equipe">Diretoria</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#projetos">Projetos</a>
+
+        <a href="https://instagram.com" target="_blank">
+            <img src="insta.png" class="insta-icon">
+        </a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <h1>Grêmio Estudantil</h1>
+    <p>Organização estudantil moderna, participativa e conectada com os alunos.</p>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+<h2>Sobre o Grêmio</h2>
+
+<div class="grid">
+
+<div class="card">
+    <div class="card-content">
+        <div class="card-title">🎯 Missão</div>
+        <div class="card-text">Representar os estudantes e defender seus interesses dentro da escola.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <div class="card-title">👁️ Visão</div>
+        <div class="card-text">Construir uma escola mais moderna, participativa e acolhedora.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <div class="card-title">🤝 Valores</div>
+        <div class="card-text">Respeito, união, responsabilidade e compromisso com os alunos.</div>
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- DIRETORIA -->
+<section id="equipe">
+<h2>Diretoria</h2>
+
+<div class="grid">
+
+<div class="card">
+    <img src="fotos/presidente.jpg">
+    <div class="card-content">
+        <div class="card-title">Presidente</div>
+        <div class="card-text">Liderança geral do grêmio.</div>
+    </div>
+</div>
+
+<div class="card">
+    <img src="fotos/vice.jpg">
+    <div class="card-content">
+        <div class="card-title">Vice-Presidente</div>
+        <div class="card-text">Apoio na organização geral.</div>
+    </div>
+</div>
+
+<div class="card">
+    <img src="fotos/comunicacao.jpg">
+    <div class="card-content">
+        <div class="card-title">Comunicação</div>
+        <div class="card-text">Redes sociais e divulgação.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <div class="card-title">Esportes</div>
+        <div class="card-text">Eventos esportivos e interclasse.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <div class="card-title">Social</div>
+        <div class="card-text">Projetos sociais e integração dos alunos.</div>
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- NOTÍCIAS -->
+<section id="noticias">
+<h2>Notícias</h2>
+
+<div class="grid">
+
+<div class="card">
+    <img src="fotos/noticia1.jpg">
+    <div class="card-content">
+        <div class="card-title">Título da notícia</div>
+        <div class="card-text">Escreva aqui a notícia manualmente.</div>
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- EVENTOS -->
+<section id="eventos">
+<h2>Eventos</h2>
+
+<div class="grid">
+
+<div class="card">
+    <img src="fotos/evento1.jpg">
+    <div class="card-content">
+        <div class="card-title">Nome do evento</div>
+        <div class="card-text">Descrição do evento.</div>
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+<h2>Projetos</h2>
+
+<div class="grid">
+
+<div class="card">
+    <img src="fotos/projeto1.jpg">
+    <div class="card-content">
+        <div class="card-title">Nome do projeto</div>
+        <div class="card-text">Descrição do projeto.</div>
+    </div>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Grêmio Estudantil
+</footer>
+
+<script>
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 120) {
+            sec.classList.add("show");
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
